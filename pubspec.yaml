@@ -1,0 +1,17 @@
+name: flutter_layout_article
+description: Flutter layout article.
+version: 1.0.0
+author: Marcelo Glasberg <marcglasberg@gmail.com>
+homepage: https://github.com/marcglasberg/flutter_layout_article
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+
+flutter:
+
