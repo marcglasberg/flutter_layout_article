@@ -33,7 +33,7 @@ A "constraint" is just a set of 4 doubles: a minimum and maximum **width**, as w
 
 If a widget is like a column with some padding, and wants to layout its two children:
 
-><img src="https://github.com/marcglasberg/flutter_layout_article/images/layoutExample.png?raw=true" width="903" height="394"></img>
+><img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/layoutExample.png" width="903" height="394"></img>
 >
 > **Widget** — Hey parent, what are my constraints?      
 >
@@ -76,7 +76,7 @@ For an interactive experience, copy <a href="https://github.com/marcglasberg/ass
 
 ## Example 1
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example1.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example1.png" width="320"></img>
 
 ```dart 
 Container(color: red)
@@ -90,7 +90,7 @@ So the `Container` fills the screen and it gets all red.
 
 ## Example 2
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example2.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example2.png" width="320"></img>
 
 ```dart                 
 Container(width: 100, height: 100, color: red)
@@ -104,7 +104,7 @@ So the `Container` fills the screen.
 
 ## Example 3
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example3.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example3.png" width="320"></img>
 
 ```dart                
 Center(
@@ -122,7 +122,7 @@ Now the `Container` can indeed be 100x100.
 
 ## Example 4
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example4.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example4.png" width="320"></img>
 
 ```dart                
 Align(
@@ -139,9 +139,9 @@ but will instead align it to the bottom-right of the available space.
 
 
 ## Example 5
-
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example5.png?raw=true" width="320"></img>
-
+          
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example5.png" width="320"></img>
+          
 ```dart
 Center(
    child: Container(
@@ -161,7 +161,7 @@ The `Container` wants to be of infinite size, but since it can't be bigger than 
 
 ## Example 6
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example6.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example6.png" width="320"></img>
 
 ```dart                
 Center(child: Container(color: red))
@@ -185,7 +185,7 @@ to understand what it will do depending on the circumstances.
 
 ## Example 7
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example7.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example7.png" width="320"></img>
 
 ```dart 
 Center(
@@ -211,7 +211,7 @@ No red color will be visible, since the green `Container` will occupy all of the
 
 ## Example 8
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example8.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example8.png" width="320"></img>
 
 ```dart 
 Center(
@@ -228,7 +228,7 @@ and the green `Container` will have the same size as the previous example.
 
 ## Example 9
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example9.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example9.png" width="320"></img>
 
 ```dart 
 ConstrainedBox(
@@ -248,7 +248,7 @@ thus ignoring its `constraints` parameter.
 
 ## Example 10
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example10.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example10.png" width="320"></img>
 
 ```dart 
 Center(
@@ -269,7 +269,7 @@ It wants to have 10 pixels, so it will end up having 70 (the **minimum**).
 
 ## Example 11
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example11.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example11.png" width="320"></img>
 
 ```dart 
 Center(
@@ -290,7 +290,7 @@ It wants to have 1000 pixels, so it will end up having 150 (the **maximum**).
 
 ## Example 12
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example12.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example12.png" width="320"></img>
 
 ```dart 
 Center(
@@ -311,7 +311,7 @@ It wants to have 100 pixels, and that's the size it will have, since that's betw
 
 ## Example 13
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example13.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example13.png" width="320"></img>
 
 ```dart 
 UnconstrainedBox(
@@ -325,7 +325,7 @@ However, the `UnconstrainedBox` lets its `Container` child have any size it want
 
 ## Example 14
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example14.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example14.png" width="320"></img>
 
 ```dart 
 UnconstrainedBox(
@@ -341,7 +341,7 @@ so the `UnconstrainedBox` will display the much dreaded "overflow warning".
 
 ## Example 15
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example15.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example15.png" width="320"></img>
 
 ```dart 
 OverflowBox(
@@ -360,7 +360,7 @@ but the `OverflowBox` will simply show what it can, no warnings given.
 
 ## Example 16
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example16.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example16.png" width="320"></img>
 
 ```dart 
 UnconstrainedBox(
@@ -378,7 +378,7 @@ Flutter can't render infinite sizes, so it will throw an error with the followin
 
 ## Example 17
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example17.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example17.png" width="320"></img>
 
 ```dart 
 UnconstrainedBox(
@@ -400,7 +400,7 @@ This makes it clear the difference between a LimitedBox and a ContrainedBox.
 
 ## Example 18
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example18.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example18.png" width="320"></img>
 
 ```dart 
 FittedBox(
@@ -419,7 +419,7 @@ the `FittedBox` will scale it until it fills all of the available width.
 
 ## Example 19
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example19.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example19.png" width="320"></img>
 
 ```dart 
 Center(
@@ -437,7 +437,7 @@ Since both `FittedBox` and the `Text` have the same size, no scaling will happen
 
 ## Example 20
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example20.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example20.png" width="320"></img>
 
 ```dart 
 Center(
@@ -453,7 +453,7 @@ It will then assume the screen size, and resize the `Text` so that it fits the s
 
 ## Example 21
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example21.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example21.png" width="320"></img>
 
 ```dart 
 Center(
@@ -467,7 +467,7 @@ and will break the line so that it fits the screen.
 
 ## Example 22
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example22.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example22.png" width="320"></img>
 
 ```dart            
 FittedBox(
@@ -482,7 +482,7 @@ Otherwise, it won't render anything, and you will get an error in the console.
 
 ## Example 23
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example23.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example23.png" width="320"></img>
 
 ```dart 
 Row(children:[
@@ -500,7 +500,7 @@ The `Row` will then put them side by side, and any extra space will remain empty
 
 ## Example 24
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example24.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example24.png" width="320"></img>
 
 ```dart 
 Row(children:[
@@ -516,7 +516,7 @@ In this case, just like an `UnconstrainedBox`, the `Row` will display the \"over
 
 ## Example 25
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example25.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example25.png" width="320"></img>
 
 ```dart 
 Row(children:[
@@ -535,7 +535,7 @@ In other words, once you use `Expanded`, the original child's width becomes irre
 
 ## Example 26
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example26.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example26.png" width="320"></img>
 
 ```dart          
 Row(children:[
@@ -554,7 +554,7 @@ In other words, the `Expanded` ignores their children preferred width.
 
 ## Example 27
 
-<img src="https://github.com/marcglasberg/flutter_layout_article/images/example27.png?raw=true" width="320"></img>
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example27.png" width="320"></img>
 
 ```dart 
 Row(children:[
