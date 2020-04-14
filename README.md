@@ -71,7 +71,7 @@ without taking into consideration the tree as a whole.
 
 # Examples
 
-For an interactive experience, copy <a href="https://github.com/marcglasberg/assorted_layout_widgets/lib/main">this standalone Dart file</a> and run its main function (you don't need to clone the whole repo if you don't want, since you just need that file).
+For an interactive experience, copy <a href="https://github.com/marcglasberg/flutter_layout_article/blob/master/lib/main.dart">this standalone Dart file</a> and run its main function (you don't need to clone the whole repo if you don't want, since you just need that file).
 
 
 ## Example 1
@@ -156,7 +156,8 @@ So the `Center` fills the screen.
 
 The `Center` tells the `Container` it can be any size it wants, but not bigger than the screen.
 
-The `Container` wants to be of infinite size, but since it can't be bigger than the screen it will just fill the screen.
+The `Container` wants to be of infinite size, but since it can't be bigger than the screen, 
+it will just fill the screen.
 
 
 ## Example 6
@@ -335,7 +336,8 @@ UnconstrainedBox(
 The screen forces the `UnconstrainedBox` to be exactly the same size of the screen, 
 and `UnconstrainedBox` lets its `Container` child have any size it wants.
 
-Unfortunately, in this case the `Container` has 4000 pixels of width and is too big to fix `UnconstrainedBox`, 
+Unfortunately, in this case the `Container` has 4000 pixels of width 
+and is too big to fit in the `UnconstrainedBox`, 
 so the `UnconstrainedBox` will display the much dreaded "overflow warning".
 
 
@@ -354,7 +356,7 @@ and `OverflowBox` lets its `Container` child have any size it wants.
 OverflowBox is similar to `UnconstrainedBox`, 
 and the difference is that it won't display any warnings if the child doesn't fit the space.
 
-In this case the `Container` has 4000 pixels of width, and is too big to fix `OverflowBox`, 
+In this case the `Container` has 4000 pixels of width, and is too big to fit in the `OverflowBox`, 
 but the `OverflowBox` will simply show what it can, no warnings given.
 
 
@@ -395,7 +397,7 @@ Note, if you change the `UnconstrainedBox` to a `Center` widget,
 the `LimitedBox` will not apply its limit anymore (since its limit is only applied when it gets infinite constraints), 
 and the `Container` width will be allowed to grow past 100.
 
-This makes it clear the difference between a LimitedBox and a ContrainedBox.
+This makes it clear the difference between a `LimitedBox` and a `ConstrainedBox`.
 
 
 ## Example 18
@@ -442,7 +444,7 @@ Since both `FittedBox` and the `Text` have the same size, no scaling will happen
 ```dart 
 Center(
    child: FittedBox(
-      child: Text('…')))
+      child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.')))
 ```       
 
 However, what happens if `FittedBox` is inside of `Center`, but the `Text` is too large to fit the screen?
@@ -457,7 +459,7 @@ It will then assume the screen size, and resize the `Text` so that it fits the s
 
 ```dart 
 Center(
-   child: Text('…'))
+   child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.'))
 ```                
 
 If, however, we remove the `FittedBox`, 
@@ -504,7 +506,7 @@ The `Row` will then put them side by side, and any extra space will remain empty
 
 ```dart 
 Row(children:[
-      Container(color: red, child: Text('…'))
+      Container(color: red, child: Text('This is a very long text that won't fit the line.'))
       Container(color: green, child: Text('Goodbye!'))]
 ```                    
 
@@ -521,7 +523,7 @@ In this case, just like an `UnconstrainedBox`, the `Row` will display the \"over
 ```dart 
 Row(children:[
    Expanded(
-       child: Container(color: red, child: Text('…')))
+       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
    Container(color: green, child: Text('Goodbye!'))]
 ```                                   
 
@@ -540,7 +542,7 @@ In other words, once you use `Expanded`, the original child's width becomes irre
 ```dart          
 Row(children:[
    Expanded(
-       child: Container(color: red, child: Text('…')))
+       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
    Expanded(
        child: Container(color: green, child: Text('Goodbye!'))]
 ```
@@ -559,16 +561,16 @@ In other words, the `Expanded` ignores their children preferred width.
 ```dart 
 Row(children:[
    Flexible(
-       child: Container(color: red, child: Text('…')))
+       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
    Flexible(
        child: Container(color: green, child: Text('Goodbye!'))]
 ```              
 
-The only difference if you use Flexible instead of `Expanded`, 
-is that `Flexible` will let its child be **smaller** than the `Flexible` width, 
-while `Expanded` forces its child to have the same width of the `Expanded`.
+The only difference if you use `Flexible` instead of `Expanded`, 
+is that `Flexible` will let its child have the **same or smaller** width than the `Flexible` itself, 
+while `Expanded` forces its child to have the **exact same** width of the `Expanded`.
 
-But both `Expanded` and `Flexible` will ignore their children width when sizing themselves.
+But both `Expanded` and `Flexible` will ignore their children widths when sizing themselves.
 
 Note, this means it's **impossible** to expand `Row` children proportionally to their sizes. 
 The `Row` will either use the exact child's with, or ignore it completely when you use `Expanded` or `Flexible`.
@@ -594,11 +596,32 @@ You'll be taken to the `basic.dart` file. Since `Column` extends `Flex`, navigat
 
 * Now scroll down until you find a method called `createRenderObject`. 
 As you can see, this method returns a `RenderFlex`. This is the corresponding render-object for the `Column`.
-Now navigate to the source-code of `RenderFlex`, which will take you to `flex.dart` file.  
+Now navigate to the source-code of `RenderFlex`, which will take you to the `flex.dart` file.  
 
 * Now scroll down until you find a method called `performLayout`. 
 This is the method which does the layout for the `Column`.
 
+*********************
+
+*Layout packages I've authored:*
+* <a href="https://pub.dev/packages/align_positioned">align_positioned</a> — Lets you declaratively position/size widgets in complex ways.
+* <a href="https://pub.dev/packages/assorted_layout_widgets">assorted_layout_widgets</a> — Includes `RowSuper` which will resize cells proportionately when content doesn't fit.
+
+*Other Flutter packages I've authored:* 
+* <a href="https://pub.dev/packages/async_redux">async_redux</a>
+* <a href="https://pub.dev/packages/provider_for_redux">provider_for_redux</a>
+* <a href="https://pub.dev/packages/i18n_extension">i18n_extension</a>
+* <a href="https://pub.dev/packages/network_to_file_image">network_to_file_image</a>
+* <a href="https://pub.dev/packages/matrix4_transform">matrix4_transform</a> 
+* <a href="https://pub.dev/packages/back_button_interceptor">back_button_interceptor</a>
+* <a href="https://pub.dev/packages/indexed_list_view">indexed_list_view</a> 
+* <a href="https://pub.dev/packages/animated_size_and_fade">animated_size_and_fade</a>
+
+<br>_Marcelo Glasberg:_<br>
+_https://github.com/marcglasberg_<br>
+_https://twitter.com/glasbergmarcelo_<br>
+_https://stackoverflow.com/users/3411681/marcg_<br>
+_https://medium.com/@marcglasberg_<br>
  
 
 

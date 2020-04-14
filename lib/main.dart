@@ -577,7 +577,7 @@ class Example17 extends Example {
       "the LimitedBox will not apply its limit anymore (since its limit is only applied when it gets infinite constraints), "
       "and the Container width will be allowed to grow past 100."
       "\n\n"
-      "This makes it clear the difference between a LimitedBox and a ContrainedBox.";
+      "This makes it clear the difference between a LimitedBox and a ConstrainedBox.";
 
   @override
   Widget build(BuildContext context) {
