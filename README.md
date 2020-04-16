@@ -71,7 +71,7 @@ without taking into consideration the tree as a whole.
 
 # Examples
 
-For an interactive experience, copy <a href="https://github.com/marcglasberg/flutter_layout_article/blob/master/lib/main.dart">this standalone Dart file</a> and run its main function (you don't need to clone the whole repo if you don't want, since you just need that file).
+For an interactive experience, run <a href="https://dartpad.dev/60174a95879612e500203084a0588f94">this DartPad</a> (there is also <a href="https://github.com/marcglasberg/flutter_layout_article">this GitHub repo</a>).
 
 
 ## Example 1
