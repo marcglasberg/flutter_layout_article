@@ -712,6 +712,8 @@ This is the method which does the layout for the `Column`.
 
 *********************
 
+_Big thanks to Simon Lightfoot for proofreading and making content suggestions for this article._
+
 *Layout packages I've authored:*
 * <a href="https://pub.dev/packages/align_positioned">align_positioned</a> — Lets you declaratively position/size widgets in complex ways.
 * <a href="https://pub.dev/packages/assorted_layout_widgets">assorted_layout_widgets</a> — Includes `RowSuper` which will resize cells proportionately when content doesn't fit.
