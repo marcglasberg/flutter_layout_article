@@ -2,7 +2,7 @@
 
 # Flutter: The Advanced Layout Rule Even Beginners Must Know
 
-When a beginner asks you why some widget with `width: 100` is not 100 pixels wide, 
+When someone learning Flutter asks you why some widget with `width:100` is not 100 pixels wide, 
 the default answer is to tell them to put that widget inside of a `Center`, right?
 
 **Don't do that!** 
@@ -10,24 +10,32 @@ the default answer is to tell them to put that widget inside of a `Center`, righ
 If you do it, they will come back again and again, asking why some `FittedBox` is not working, 
 why that `Column` is overflowing, or what `IntrinsicWidth` is supposed to be doing.
 
-Instead, first tell them that Flutter layout is very different from Web/HTML layout (which is probably where they're coming from), and then make them memorize the following rule:
+Instead, first tell them that Flutter layout is very different from HTML layout 
+(which is probably where they're coming from), 
+and then make them memorize the following rule:
 
  
-### Constraints go down. Sizes go up. Positions are set by parents.
+### 👉 Constraints go down. Sizes go up. Positions are set by parents.
 
 Flutter layout can't really be understood without knowing this rule, 
-so I believe beginners should learn it early on.
+so I believe everyone should learn it early on.
 
-Let's explain it in more detail: 
+In more detail: 
 
 * A widget gets its own constraints from its parent. 
-A "constraint" is just a set of 4 doubles: a minimum and maximum **width**, as well as a minimum and maximum **height**. 
+A "constraint" is just a set of 4 doubles: a minimum and maximum **width**, 
+as well as a minimum and maximum **height**. 
 
-* Then the widget goes through its own list of children. One by one, the widget tells its children what are their constraints (which can be different for each child), and then asks each child which size it wants to be.
+* Then the widget goes through its own list of children. One by one, 
+the widget tells its children what are their constraints (which can be different for each child), 
+and then asks each child which size it wants to be.
 
-* Then, the widget positions its children (horizontally in the `x` axis, and vertically in the `y` axis), one by one.
+* Then, the widget positions its children 
+(horizontally in the `x` axis, and vertically in the `y` axis),
+one by one.
 
-* And, finally, the widget tells its parent about its own size (within the original constraints, of course).
+* And, finally, the widget tells its parent about its own size 
+(within the original constraints, of course).
 
 <br>
 
@@ -574,6 +582,107 @@ But both `Expanded` and `Flexible` will ignore their children widths when sizing
 
 Note, this means it's **impossible** to expand `Row` children proportionally to their sizes. 
 The `Row` will either use the exact child's with, or ignore it completely when you use `Expanded` or `Flexible`.
+
+
+## Example 28
+
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example28.png" width="320"></img>
+
+```dart 
+Scaffold(
+   body: Container(
+      color: blue,
+      child: Column(
+         children: [
+            Text('Hello!'),
+            Text('Goodbye!'),
+         ])))
+```           
+
+The screen forces the `Scaffold` to be exactly the same size of the screen.
+
+So the `Scaffold` fills the screen.
+
+The `Scaffold` tells the `Container` it can be any size it wants, but not bigger than the screen.
+      
+Note: When a widget tells its child it can be smaller than a certain size, 
+we say the widget supplies "loose" constraints to its child. More on that in the article.   
+
+
+## Example 29
+
+<img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example29.png" width="320"></img>
+
+```dart 
+Scaffold(
+   body: SizedBox.expand(
+      child: Container(
+         color: blue,
+         child: Column(
+            children: [
+               Text('Hello!'),
+               Text('Goodbye!'),
+            ]))))
+```           
+
+If we want the `Scaffold`'s child to be exactly the same size as the `Scaffold` itself, 
+we can wrap its child into a `SizedBox.expand`.
+      
+Note: When a widget tells its child it must be of a certain size, 
+we say the widget supplies "tight" constraints to its child. More on that in the article.
+
+
+# Tight × Loose Constraints
+
+It's very common to hear that some constraint is "tight" or "loose", 
+so it's worth knowing what it means.
+
+<br>
+
+A **tight** constraint offers a single possibility. An **exact** size. 
+In other words, a tight constraint has its maximum width equal to its minimum width;
+and has its maximum height equal to its minimum height.
+
+If you go to Flutter's `box.dart` file and search for the `BoxConstraints` constructors,
+you will find this:
+
+```dart                    
+BoxConstraints.tight(Size size)
+   : minWidth = size.width,
+     maxWidth = size.width,
+     minHeight = size.height,
+     maxHeight = size.height;
+```                                                    
+
+If you revisit the **Example 2** further above, 
+it tells us that the screen forces the red `Container` to be exactly the same size of the screen.
+The screen does that, of course, by passing **tight** constraints to the `Container`.  
+
+<br>
+
+A **loose** constraint, on the other hand, sets the **maximum** width/height, 
+but lets the widget be as small as it wants. 
+In other words, a loose constraint has **minimum** width/height both equal to **zero**:
+
+
+```dart                    
+BoxConstraints.loose(Size size)
+   : minWidth = 0.0,
+     maxWidth = size.width,
+     minHeight = 0.0,
+     maxHeight = size.height;
+```  
+
+If you revisit the **Example 3**, 
+it tells us that the `Center` lets the red `Container` be smaller, but not bigger than the screen.
+The `Center` does that, of course, by passing **loose** constraints to the `Container`.
+
+If you revisit the **Example 3**, 
+it tells us that the `Center` lets the red `Container` be smaller, but not bigger than the screen. 
+The `Center` does that, of course, by passing **loose** constraints to the `Container`. 
+Ultimately, the `Center`'s very purpose 
+is to transform the tight constraints it got from its parent (the screen) 
+to loose constraints for its child (the `Container`).
 
 
 # Learning the layout rules for specific widgets
