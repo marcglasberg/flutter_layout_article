@@ -59,7 +59,7 @@ If a widget is like a column with some padding, and wants to layout its two chil
 >                
 > **Second Child** — Ok, I wish to be `140` pixels wide, and `30` pixels tall.
 >
-> **Widget** — Very Well. I will put my fist child into position `x: 5` and `y: 5`, and my second child into position `x: 80` and `y: 25`.
+> **Widget** — Very Well. I will put my first child into position `x: 5` and `y: 5`, and my second child into position `x: 80` and `y: 25`.
 > 
 > **Widget** — Hey parent, I've decided that my size is going to be `300` pixels wide, and `60` pixels tall.
 

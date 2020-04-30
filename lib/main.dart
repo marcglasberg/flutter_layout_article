@@ -95,53 +95,60 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
       title: 'Flutter Layout Article',
       home: SafeArea(
         child: Material(
-            color: Color(0xFFCCCCCC),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                    child: ConstrainedBox(
-                        constraints: BoxConstraints.tightFor(
-                            width: double.infinity, height: double.infinity),
-                        child: widget.examples[count - 1])),
-                Container(
-                  height: 50,
-                  width: double.infinity,
-                  color: Colors.black,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        for (int i = 0; i < widget.examples.length; i++)
-                          Container(
-                              width: 58,
-                              padding: const EdgeInsets.only(left: 4.0, right: 4.0),
-                              child: button(i + 1)),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                    child: Scrollbar(
+            color: Colors.black,
+            child: FittedBox(
+              child: Container(
+                width: 400,
+                height: 670,
+                color: Color(0xFFCCCCCC),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                        child: ConstrainedBox(
+                            constraints: BoxConstraints.tightFor(
+                                width: double.infinity, height: double.infinity),
+                            child: widget.examples[count - 1])),
+                    Container(
+                      height: 50,
+                      width: double.infinity,
+                      color: Colors.black,
                       child: SingleChildScrollView(
-                          key: ValueKey(count),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              children: <Widget>[
-                                Center(child: Text(code)),
-                                SizedBox(height: 15),
-                                Text(explanation,
-                                    style: TextStyle(
-                                        color: Colors.blue[900], fontStyle: FontStyle.italic)),
-                              ],
-                            ),
-                          )),
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            for (int i = 0; i < widget.examples.length; i++)
+                              Container(
+                                  width: 58,
+                                  padding: const EdgeInsets.only(left: 4.0, right: 4.0),
+                                  child: button(i + 1)),
+                          ],
+                        ),
+                      ),
                     ),
-                    height: 273,
-                    color: Colors.grey),
-              ],
+                    Container(
+                        child: Scrollbar(
+                          child: SingleChildScrollView(
+                              key: ValueKey(count),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  children: <Widget>[
+                                    Center(child: Text(code)),
+                                    SizedBox(height: 15),
+                                    Text(explanation,
+                                        style: TextStyle(
+                                            color: Colors.blue[900], fontStyle: FontStyle.italic)),
+                                  ],
+                                ),
+                              )),
+                        ),
+                        height: 273,
+                        color: Colors.grey),
+                  ],
+                ),
+              ),
             )),
       ),
     );
