@@ -546,7 +546,11 @@ class Example15 extends Example {
   @override
   Widget build(BuildContext context) {
     return OverflowBox(
-      child: Center(child: Container(color: red, width: 4000, height: 50)),
+      minWidth: 0.0,
+      minHeight: 0.0,
+      maxWidth: double.infinity,
+      maxHeight: double.infinity,
+      child: Container(color: red, width: 4000, height: 50),
     );
   }
 }
