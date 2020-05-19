@@ -2,6 +2,10 @@
 
 # Flutter: The Advanced Layout Rule Even Beginners Must Know
 
+**Update:** *You can read this article <a href="https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2">in Medium</a>. 
+It is also now part of the <a href="https://flutter.dev/docs/development/ui/layout/constraints">official Flutter documentation</a>. 
+And it has a <a href="https://habr.com/ru/post/500210/">Russian translation</a> by Kirill Matrosov.*
+
 When someone learning Flutter asks you why some widget with `width:100` is not 100 pixels wide, 
 the default answer is to tell them to put that widget inside of a `Center`, right?
 
@@ -104,7 +108,7 @@ So the `Container` fills the screen and it gets all red.
 Container(width: 100, height: 100, color: red)
 ```           
 
-The red `Container` wants to be 100x100, but it can't,
+The red `Container` wants to be 100×100, but it can't,
 because the screen forces it to be exactly the same size of the screen.
       
 So the `Container` fills the screen.
@@ -125,7 +129,7 @@ So the `Center` fills the screen.
 
 The `Center` tells the `Container` it can be any size it wants, but not bigger than the screen.
 
-Now the `Container` can indeed be 100x100.
+Now the `Container` can indeed be 100×100.
 
 
 ## Example 4
@@ -212,9 +216,9 @@ Since the red `Container` has no size but has a child, it decides it wants to be
 
 The red `Container` tells its child that if can be any size it wants, but not bigger than the screen.
 
-The child happens to be a green `Container`, that wants to be 30x30.
+The child happens to be a green `Container`, that wants to be 30×30.
 
-As said, the red `Container` will size itself to its children size, so it will also be 30x30. 
+As said, the red `Container` will size itself to its children size, so it will also be 30×30. 
 No red color will be visible, since the green `Container` will occupy all of the red `Container`.
 
 
@@ -229,11 +233,11 @@ Center(
       child: Container(color: green, width: 30, height: 30)))
 ```                  
 
-The red `Container` will size itself to its children size, but it takes its own padding into consideration. 
-So it will also be 30x30 plus padding. 
+The red `Container` will size itself to its children size, 
+but it takes its own padding into consideration. 
+So it will be 70×70 ( = 30×30 plus 20 pixels of padding on all sides). 
 The red color will be visible because of the padding, 
 and the green `Container` will have the same size as the previous example.
-
 
 ## Example 9
 
@@ -716,7 +720,8 @@ _Big thanks to Simon Lightfoot for proofreading and making content suggestions f
 
 *Layout packages I've authored:*
 * <a href="https://pub.dev/packages/align_positioned">align_positioned</a> — Lets you declaratively position/size widgets in complex ways.
-* <a href="https://pub.dev/packages/assorted_layout_widgets">assorted_layout_widgets</a> — Includes `RowSuper` which will resize cells proportionately when content doesn't fit.
+* <a href="https://pub.dev/packages/assorted_layout_widgets">assorted_layout_widgets</a>
+ — Includes `RowSuper` which will resize cells proportionately when content doesn't fit.
 
 *Other Flutter packages I've authored:* 
 * <a href="https://pub.dev/packages/async_redux">async_redux</a>
@@ -727,6 +732,15 @@ _Big thanks to Simon Lightfoot for proofreading and making content suggestions f
 * <a href="https://pub.dev/packages/back_button_interceptor">back_button_interceptor</a>
 * <a href="https://pub.dev/packages/indexed_list_view">indexed_list_view</a> 
 * <a href="https://pub.dev/packages/animated_size_and_fade">animated_size_and_fade</a>
+* <a href="https://pub.dev/packages/weak_map">weak_map</a>
+
+*My Medium Articles:*
+* <a href="https://medium.com/flutter-community/https-medium-com-marcglasberg-async-redux-33ac5e27d5f6">Async Redux: Flutter’s non-boilerplate version of Redux</a> (versions: <a href="https://medium.com/flutterando/async-redux-pt-brasil-e783ceb13c43">Português</a>)
+* <a href="https://medium.com/flutter-community/i18n-extension-flutter-b966f4c65df9">i18n_extension</a> (versions: <a href="https://medium.com/flutterando/qual-a-forma-f%C3%A1cil-de-traduzir-seu-app-flutter-para-outros-idiomas-ab5178cf0336">Português</a>)
+* <a href="https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2">Flutter: The Advanced Layout Rule Even Beginners Must Know</a> (versions: <a href="https://habr.com/ru/post/500210/">русский</a>)
+
+*My article in the official Flutter documentation*:
+* <a href="https://flutter.dev/docs/development/ui/layout/constraints">Understanding constraints</a>
 
 <br>_Marcelo Glasberg:_<br>
 _https://github.com/marcglasberg_<br>
