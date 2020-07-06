@@ -145,7 +145,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                               )),
                         ),
                         height: 273,
-                        color: Colors.grey),
+                        color: Colors.grey[200]),
                   ],
                 ),
               ),
