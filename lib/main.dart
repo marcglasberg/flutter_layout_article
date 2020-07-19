@@ -370,7 +370,7 @@ class Example8 extends Example {
       "      child: Container(color: green, width: 30, height: 30)))";
   final String explanation =
       "The red Container will size itself to its children size, but it takes its own padding into consideration. "
-      "So it will also be 20x20 plus padding. "
+      "So it will also be 30x30, plus a 20x20 padding. "
       "The red color will be visible because of the padding, and the green Container will have the same size as the previous example.";
 
   @override
