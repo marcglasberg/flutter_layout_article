@@ -728,6 +728,7 @@ _Big thanks to Simon Lightfoot for proofreading and making content suggestions f
 * <a href="https://pub.dev/packages/provider_for_redux">provider_for_redux</a>
 * <a href="https://pub.dev/packages/i18n_extension">i18n_extension</a>
 * <a href="https://pub.dev/packages/network_to_file_image">network_to_file_image</a>
+* <a href="https://pub.dev/packages/image_pixels">image_pixels</a>
 * <a href="https://pub.dev/packages/matrix4_transform">matrix4_transform</a> 
 * <a href="https://pub.dev/packages/back_button_interceptor">back_button_interceptor</a>
 * <a href="https://pub.dev/packages/indexed_list_view">indexed_list_view</a> 
