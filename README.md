@@ -725,6 +725,7 @@ _Big thanks to Simon Lightfoot for proofreading and making content suggestions f
 
 *Other Flutter packages I've authored:* 
 * <a href="https://pub.dev/packages/async_redux">async_redux</a>
+* <a href="https://pub.dev/packages/fast_immutable_collections">fast_immutable_collections</a>
 * <a href="https://pub.dev/packages/provider_for_redux">provider_for_redux</a>
 * <a href="https://pub.dev/packages/i18n_extension">i18n_extension</a>
 * <a href="https://pub.dev/packages/network_to_file_image">network_to_file_image</a>
