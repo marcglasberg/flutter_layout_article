@@ -578,7 +578,7 @@ The `Row` will then put them side by side, and any extra space will remain empty
 ```dart 
 Row(
    children:[
-      Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line.")),
+      Container(color: Colors.red, child: Text('This is a very long text that won\’t fit the line.')),
       Container(color: Colors.green, child: Text('Goodbye!')),
    ]
 );
@@ -598,7 +598,7 @@ In this case, just like an `UnconstrainedBox`, the `Row` will display the \"over
 Row(
    children:[
       Expanded(
-         child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line."))
+         child: Container(color: Colors.red, child: Text('This is a very long text that won\’t fit the line.'))
       ),
       Container(color: Colors.green, child: Text('Goodbye!')),
    ]
@@ -621,7 +621,7 @@ In other words, once you use `Expanded`, the original child's width becomes irre
 Row(
    children:[
       Expanded(
-         child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line.")),
+         child: Container(color: Colors.red, child: Text('This is a very long text that won\’t fit the line.')),
       ),
       Expanded(
          child: Container(color: Colors.green, child: Text(‘Goodbye!’),
@@ -644,7 +644,7 @@ In other words, the `Expanded` ignores their children preferred width.
 ```dart 
 Row(children:[
   Flexible(
-    child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line."))),
+    child: Container(color: Colors.red, child: Text('This is a very long text that won\’t fit the line.'))),
   Flexible(
     child: Container(color: Colors.green, child: Text(‘Goodbye!’))),
   ]
