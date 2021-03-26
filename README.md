@@ -91,7 +91,7 @@ For an interactive experience, run <a href="https://dartpad.dev/60174a95879612e5
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example1.png" width="320"></img>
 
 ```dart 
-Container(color: red)
+Container(color: Colors.red);
 ```
  
 The screen is the parent of the `Container`. 
@@ -105,7 +105,7 @@ So the `Container` fills the screen and it gets all red.
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example2.png" width="320"></img>
 
 ```dart                 
-Container(width: 100, height: 100, color: red)
+Container(width: 100, height: 100, color: Colors.red);
 ```           
 
 The red `Container` wants to be 100×100, but it can't,
@@ -120,7 +120,8 @@ So the `Container` fills the screen.
 
 ```dart                
 Center(
-   child: Container(width: 100, height: 100, color: red))
+   child: Container(width: 100, height: 100, color: Colors.red);
+)
 ```            
 
 The screen forces the `Center` to be exactly the same size of the screen.
@@ -139,7 +140,8 @@ Now the `Container` can indeed be 100×100.
 ```dart                
 Align(
    alignment: Alignment.bottomRight,
-   child: `Container`(width: 100, height: 100, color: red))
+   child: Container(width: 100, height: 100, color: Colors.red),
+);
 ```            
 
   
@@ -157,9 +159,11 @@ but will instead align it to the bottom-right of the available space.
 ```dart
 Center(
    child: Container(
-            color: red,
-            width: double.infinity,
-            height: double.infinity)) 
+      color: Colors.red,
+      width: double.infinity,
+      height: double.infinity,
+   )
+);
 ```
                            
 The screen forces the `Center` to be exactly the same size of the screen.
@@ -177,7 +181,7 @@ it will just fill the screen.
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example6.png" width="320"></img>
 
 ```dart                
-Center(child: Container(color: red))
+Center(child: Container(color: Colors.red));
 ```                   
 
 The screen forces the `Center` to be exactly the same size of the screen.
@@ -202,8 +206,11 @@ to understand what it will do depending on the circumstances.
 
 ```dart 
 Center(
-   child: Container(color: red
-      child: Container(color: green, width: 30, height: 30)))
+   child: Container(
+      color: Colors.red,
+      child: Container(color: Colors.green, width: 30, height: 30),
+   )
+);
 ```        
 
 The screen forces the `Center` to be exactly the same size of the screen.
@@ -228,9 +235,12 @@ No red color will be visible, since the green `Container` will occupy all of the
 
 ```dart 
 Center(
-   child: Container(color: red
-      padding: const EdgeInsets.all(20.0),
-      child: Container(color: green, width: 30, height: 30)))
+   child: Container(
+     color: Colors.red,
+     padding: const EdgeInsets.all(20.0),
+     child: Container(color: Colors.green, width: 30, height: 30),
+   )
+);
 ```                  
 
 The red `Container` will size itself to its children size, 
@@ -246,9 +256,13 @@ and the green `Container` will have the same size as the previous example.
 ```dart 
 ConstrainedBox(
    constraints: BoxConstraints(
-              minWidth: 70, minHeight: 70,
-              maxWidth: 150, maxHeight: 150),
-      child: Container(color: red, width: 10, height: 10)))
+      minWidth: 70,
+      minHeight: 70,
+      maxWidth: 150,
+      maxHeight: 150,
+   ),
+   child: Container(color: Colors.red, width: 10, height: 10),
+);
 ```         
 
 You would guess the `Container` would have to be between 70 and 150 pixels, but you would be wrong. 
@@ -267,9 +281,14 @@ thus ignoring its `constraints` parameter.
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-                 minWidth: 70, minHeight: 70,
-                 maxWidth: 150, maxHeight: 150),
-        child: Container(color: red, width: 10, height: 10))))
+         minWidth: 70,
+         minHeight: 70,
+         maxWidth: 150,
+         maxHeight: 150,
+      ),
+      child: Container(color: Colors.red, width: 10, height: 10),
+   )
+);
 ```                            
 
 Now, `Center` will allow `ConstrainedBox` to be any size up to the screen size.
@@ -286,11 +305,16 @@ It wants to have 10 pixels, so it will end up having 70 (the **minimum**).
 
 ```dart 
 Center(
-   child: ConstrainedBox(
-      constraints: BoxConstraints(
-                 minWidth: 70, minHeight: 70,
-                 maxWidth: 150, maxHeight: 150),
-        child: Container(color: red, width: 1000, height: 1000))))
+  child: ConstrainedBox(
+     constraints: BoxConstraints(
+        minWidth: 70,
+        minHeight: 70,
+        maxWidth: 150,
+        maxHeight: 150,
+        ),
+     child: Container(color: Colors.red, width: 1000, height: 1000),
+  )
+);
 ```             
 
 `Center` will allow `ConstrainedBox` to be any size up to the screen size.
@@ -309,9 +333,14 @@ It wants to have 1000 pixels, so it will end up having 150 (the **maximum**).
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-                 minWidth: 70, minHeight: 70,
-                 maxWidth: 150, maxHeight: 150),
-        child: Container(color: red, width: 100, height: 100))))
+         minWidth: 70,
+         minHeight: 70,
+         maxWidth: 150,
+         maxHeight: 150,
+      ),
+      child: Container(color: Colors.red, width: 100, height: 100),
+   )
+);
 ```             
 
 `Center` will allow `ConstrainedBox` to be any size up to the screen size.
@@ -328,7 +357,8 @@ It wants to have 100 pixels, and that's the size it will have, since that's betw
 
 ```dart 
 UnconstrainedBox(
-   child: Container(color: red, width: 20, height: 50))
+   child: Container(color: Colors.red, width: 20, height: 50),
+);
 ```
 
 The screen forces the `UnconstrainedBox` to be exactly the same size of the screen.
@@ -342,7 +372,8 @@ However, the `UnconstrainedBox` lets its `Container` child have any size it want
 
 ```dart 
 UnconstrainedBox(
-   child: Container(color: red, width: 4000, height: 50));
+   child: Container(color: Colors.red, width: 4000, height: 50),
+);
 ```                 
 
 The screen forces the `UnconstrainedBox` to be exactly the same size of the screen, 
@@ -359,7 +390,12 @@ so the `UnconstrainedBox` will display the much dreaded "overflow warning".
 
 ```dart 
 OverflowBox(
-   child: Container(color: red, width: 4000, height: 50));
+   minWidth: 0.0,
+   minHeight: 0.0,
+   maxWidth: double.infinity,
+   maxHeight: double.infinity,
+   child: Container(color: Colors.red, width: 4000, height: 50),
+);
 ```                        
 
 The screen forces the `OverflowBox` to be exactly the same size of the screen, 
@@ -378,7 +414,12 @@ but the `OverflowBox` will simply show what it can, no warnings given.
 
 ```dart 
 UnconstrainedBox(
-   child: Container(color: Colors.red, width: double.infinity, height: 100))
+   child: Container(
+      color: Colors.red,
+      width: double.infinity,
+      height: 100,
+   )
+);
 ```            
 
 This won't render anything, and you will get an error in the console.
@@ -396,9 +437,15 @@ Flutter can't render infinite sizes, so it will throw an error with the followin
 
 ```dart 
 UnconstrainedBox(
-   child: LimitedBox(maxWidth: 100,
-      child: Container(color: Colors.red,
-                       width: double.infinity, height: 100))
+   child: LimitedBox(
+      maxWidth: 100,
+      child: Container(
+         color: Colors.red,
+         width: double.infinity,
+         height: 100,
+      )
+   )
+);
 ```              
 
 Here you won't get an error anymore, 
@@ -418,7 +465,8 @@ This makes it clear the difference between a `LimitedBox` and a `ConstrainedBox`
 
 ```dart 
 FittedBox(
-   child: Text('Some Example Text.'))
+   child: Text('Some Example Text.'),
+);
 ```             
 
 The screen forces the `FittedBox` to be exactly the same size of the screen.
@@ -438,7 +486,9 @@ the `FittedBox` will scale it until it fills all of the available width.
 ```dart 
 Center(
    child: FittedBox(
-      child: Text('Some Example Text.')))
+      child: Text('Some Example Text.'),
+   )
+);
 ```   
 
 But what happens if we put the `FittedBox` inside of a `Center`? 
@@ -456,7 +506,9 @@ Since both `FittedBox` and the `Text` have the same size, no scaling will happen
 ```dart 
 Center(
    child: FittedBox(
-      child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.')))
+      child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.'),
+   )
+);
 ```       
 
 However, what happens if `FittedBox` is inside of `Center`, but the `Text` is too large to fit the screen?
@@ -471,7 +523,8 @@ It will then assume the screen size, and resize the `Text` so that it fits the s
 
 ```dart 
 Center(
-   child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.'))
+   child: Text('This is some very very very large text that is too big to fit a regular screen in a single line.'),
+);
 ```                
 
 If, however, we remove the `FittedBox`, 
@@ -486,7 +539,10 @@ and will break the line so that it fits the screen.
 ```dart            
 FittedBox(
    child: Container(
-      height: 20.0, width: double.infinity))
+      height: 20.0,
+      width: double.infinity,
+   )
+);
 ```
 
 Note `FittedBox` can only scale a widget that is **bounded** (has non infinite width and height).
@@ -499,9 +555,12 @@ Otherwise, it won't render anything, and you will get an error in the console.
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example23.png" width="320"></img>
 
 ```dart 
-Row(children:[
-       Container(color: red, child: Text('Hello!'))
-       Container(color: green, child: Text('Goodbye!'))]
+Row(
+   children:[
+      Container(color: Colors.red, child: Text('Hello!')),
+      Container(color: Colors.green, child: Text('Goodbye!')),
+   ]
+);
 ```               
 
 The screen forces the `Row` to be exactly the same size of the screen.
@@ -517,9 +576,12 @@ The `Row` will then put them side by side, and any extra space will remain empty
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example24.png" width="320"></img>
 
 ```dart 
-Row(children:[
-      Container(color: red, child: Text('This is a very long text that won't fit the line.'))
-      Container(color: green, child: Text('Goodbye!'))]
+Row(
+   children:[
+      Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line.")),
+      Container(color: Colors.green, child: Text('Goodbye!')),
+   ]
+);
 ```                    
 
 Since the `Row` won't impose any constraints to its children, 
@@ -533,10 +595,14 @@ In this case, just like an `UnconstrainedBox`, the `Row` will display the \"over
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example25.png" width="320"></img>
 
 ```dart 
-Row(children:[
-   Expanded(
-       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
-   Container(color: green, child: Text('Goodbye!'))]
+Row(
+   children:[
+      Expanded(
+         child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line."))
+      ),
+      Container(color: Colors.green, child: Text('Goodbye!')),
+   ]
+);
 ```                                   
 
 When a `Row` child is wrapped in an `Expanded` widget, the `Row` will not let this child define its own width anymore.
@@ -552,11 +618,16 @@ In other words, once you use `Expanded`, the original child's width becomes irre
 <img src="https://raw.githubusercontent.com/marcglasberg/flutter_layout_article/master/images/example26.png" width="320"></img>
 
 ```dart          
-Row(children:[
-   Expanded(
-       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
-   Expanded(
-       child: Container(color: green, child: Text('Goodbye!'))]
+Row(
+   children:[
+      Expanded(
+         child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line.")),
+      ),
+      Expanded(
+         child: Container(color: Colors.green, child: Text(‘Goodbye!’),
+      ),
+   ]
+);
 ```
 
 If all `Row` children are wrapped in `Expanded` widgets, 
@@ -572,10 +643,12 @@ In other words, the `Expanded` ignores their children preferred width.
 
 ```dart 
 Row(children:[
-   Flexible(
-       child: Container(color: red, child: Text('This is a very long text that won't fit the line.')))
-   Flexible(
-       child: Container(color: green, child: Text('Goodbye!'))]
+  Flexible(
+    child: Container(color: Colors.red, child: Text("This is a very long text that won’t fit the line."))),
+  Flexible(
+    child: Container(color: Colors.green, child: Text(‘Goodbye!’))),
+  ]
+);
 ```              
 
 The only difference if you use `Flexible` instead of `Expanded`, 
@@ -595,12 +668,13 @@ The `Row` will either use the exact child's with, or ignore it completely when y
 ```dart 
 Scaffold(
    body: Container(
-      color: blue,
+      color: Colors.blue,
       child: Column(
          children: [
             Text('Hello!'),
             Text('Goodbye!'),
-         ])))
+         ]
+      )));
 ```           
 
 The screen forces the `Scaffold` to be exactly the same size of the screen.
@@ -619,14 +693,15 @@ we say the widget supplies "loose" constraints to its child. More on that in the
 
 ```dart 
 Scaffold(
-   body: SizedBox.expand(
-      child: Container(
-         color: blue,
-         child: Column(
-            children: [
-               Text('Hello!'),
-               Text('Goodbye!'),
-            ]))))
+body: SizedBox.expand(
+   child: Container(
+      color: Colors.blue,
+      child: Column(
+         children: [
+            Text('Hello!'),
+            Text('Goodbye!'),
+         ],
+      ))));
 ```           
 
 If we want the `Scaffold`'s child to be exactly the same size as the `Scaffold` itself, 
@@ -750,5 +825,3 @@ _https://twitter.com/glasbergmarcelo_<br>
 _https://stackoverflow.com/users/3411681/marcg_<br>
 _https://medium.com/@marcglasberg_<br>
  
-
-
