@@ -1,11 +1,11 @@
 name: flutter_layout_article
 description: Flutter layout article.
-version: 1.0.0
-author: Marcelo Glasberg <marcglasberg@gmail.com>
+version: 1.0.1
 homepage: https://github.com/marcglasberg/flutter_layout_article
+#author: Marcelo Glasberg <marcglasberg@gmail.com>
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: '>=2.13.0 <3.0.0'
 
 dependencies:
   flutter:
