@@ -1,6 +1,6 @@
 # Flutter: The Advanced Layout Rule Even Beginners Must Know
                              
-### *Where you can read this article?*
+### *Where can you read this article?*
 
 * <a href="https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2">
   in Medium</a>
@@ -15,7 +15,7 @@
   a <a href="https://medium.com/@suatozkaya/flutter-herkesin-bilmesi-gereken-temel-layout-kurallar%C4%B1-3395762b518e">
   Turkish translation</a> by Suat Özkaya
 
-### You can also now read the article as:
+### You can now also read it here:
 
 * Part of the <a href="https://flutter.dev/docs/development/ui/layout/constraints">official Flutter
   documentation</a>.
