@@ -67,7 +67,6 @@ class FlutterLayoutArticle extends StatefulWidget {
 
 class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
   late int count;
-  late Widget example;
   late String code;
   late String explanation;
 
