@@ -67,7 +67,6 @@ class FlutterLayoutArticle extends StatefulWidget {
 
 class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
   late int count;
-  late Widget example;
   late String code;
   late String explanation;
 
@@ -919,13 +918,15 @@ class Example28 extends Example {
 //////////////////////////////////////////////////
 
 class Example29 extends Example {
-  final String code = "Scaffold(\n"
-      "   body: Container(color: blue,\n"
-      "   child: SizedBox.expand(\n"
-      "      child: Column(\n"
-      "         children: [\n"
-      "            Text('Hello!'),\n"
-      "            Text('Goodbye!')]))))";
+  @override
+  final code = 'Scaffold(\n'
+      '   body: SizedBox.expand(,\n'
+      '     child: Conatiner(\n'
+      '       color: blue,\n'
+      '       child: Column(\n'
+      '         children: [\n'
+      '            Text(\'Hello!\'),\n'
+      '            Text(\'Goodbye!\')]))))';
 
   final String explanation =
       "If we want the Scaffold's child to be exactly the same size as the Scaffold itself, "
