@@ -67,7 +67,6 @@ class FlutterLayoutArticle extends StatefulWidget {
 
 class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
   late int count;
-  late Widget example;
   late String code;
   late String explanation;
 
@@ -122,8 +121,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                           for (int i = 0; i < widget.examples.length; i++)
                             Container(
                               width: 58,
-                              padding:
-                                  const EdgeInsets.only(left: 4.0, right: 4.0),
+                              padding: const EdgeInsets.only(left: 4.0, right: 4.0),
                               child: button(i + 1),
                             ),
                         ],
@@ -175,8 +173,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
         },
       );
 
-  void showExample(int exampleNumber, String code, String explanation) =>
-      setState(() {
+  void showExample(int exampleNumber, String code, String explanation) => setState(() {
         this.count = exampleNumber;
         this.code = code;
         this.explanation = explanation;
@@ -202,8 +199,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
         color: isSelected ? Colors.grey : Colors.grey[800],
-        child: Text(exampleNumber.toString(),
-            style: TextStyle(color: Colors.white)),
+        child: Text(exampleNumber.toString(), style: TextStyle(color: Colors.white)),
         onPressed: () {
           Scrollable.ensureVisible(
             context,
@@ -234,8 +230,7 @@ class Example1 extends Example {
 
 class Example2 extends Example {
   final String code = "Container(width: 100, height: 100, color: red)";
-  final String explanation =
-      "The red Container wants to be 100x100, but it can't, "
+  final String explanation = "The red Container wants to be 100x100, but it can't, "
       "because the screen forces it to be exactly the same size of the screen."
       "\n\n"
       "So the Container fills the screen.";
@@ -309,8 +304,7 @@ class Example5 extends Example {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-          width: double.infinity, height: double.infinity, color: red),
+      child: Container(width: double.infinity, height: double.infinity, color: red),
     );
   }
 }
@@ -416,8 +410,8 @@ class Example9 extends Example {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(
-          minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
+      constraints:
+          BoxConstraints(minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
       child: Container(color: red, width: 10, height: 10),
     );
   }
@@ -443,8 +437,8 @@ class Example10 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(
-            minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
+        constraints:
+            BoxConstraints(minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
         child: Container(color: red, width: 10, height: 10),
       ),
     );
@@ -471,8 +465,8 @@ class Example11 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(
-            minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
+        constraints:
+            BoxConstraints(minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
         child: Container(color: red, width: 1000, height: 1000),
       ),
     );
@@ -499,8 +493,8 @@ class Example12 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(
-            minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
+        constraints:
+            BoxConstraints(minWidth: 70, minHeight: 70, maxWidth: 150, maxHeight: 150),
         child: Container(color: red, width: 100, height: 100),
       ),
     );
@@ -615,8 +609,7 @@ class Example17 extends Example {
     return UnconstrainedBox(
       child: LimitedBox(
         maxWidth: 100,
-        child:
-            Container(color: Colors.red, width: double.infinity, height: 100),
+        child: Container(color: Colors.red, width: double.infinity, height: 100),
       ),
     );
   }
@@ -775,8 +768,7 @@ class Example24 extends Example {
       children: [
         Container(
             color: red,
-            child: Text("This is a very long text that won't fit the line.",
-                style: big)),
+            child: Text("This is a very long text that won't fit the line.", style: big)),
         Container(color: green, child: Text("Goodbye!", style: big)),
       ],
     );
@@ -805,8 +797,8 @@ class Example25 extends Example {
             child: Center(
           child: Container(
               color: red,
-              child: Text("This is a very long text that won't fit the line.",
-                  style: big)),
+              child:
+                  Text("This is a very long text that won't fit the line.", style: big)),
         )),
         Container(color: green, child: Text("Goodbye!", style: big)),
       ],
@@ -837,9 +829,7 @@ class Example26 extends Example {
                 color: red,
                 child: Text("This is a very long text that won't fit the line.",
                     style: big))),
-        Expanded(
-            child:
-                Container(color: green, child: Text("Goodbye!", style: big))),
+        Expanded(child: Container(color: green, child: Text("Goodbye!", style: big))),
       ],
     );
   }
@@ -872,9 +862,7 @@ class Example27 extends Example {
                 color: red,
                 child: Text("This is a very long text that won't fit the line.",
                     style: big))),
-        Flexible(
-            child:
-                Container(color: green, child: Text("Goodbye!", style: big))),
+        Flexible(child: Container(color: green, child: Text("Goodbye!", style: big))),
       ],
     );
   }
